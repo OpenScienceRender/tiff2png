@@ -1,0 +1,9 @@
+#!/bin/sh
+
+rm -f output.png
+wget --no-check-certificate $1
+
+convert $(basename "$1" .txt) output.png
+
+cat output.png
+rm -f output.png $(basename "$1" .txt)
